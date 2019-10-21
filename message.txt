@@ -1,0 +1,5 @@
+This is a special message saved in the "message.txt" file.
+Anyone can change this message by changing the "message.txt" file.
+Oh, I see it's your birthday.  Happy birthday!  
+It's probably not your birthday...
+But that's going to freak someone out :)

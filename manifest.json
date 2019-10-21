@@ -1,0 +1,50 @@
+
+{
+  "name": "hello-world",
+  "label": "Hello World: My First Gear",
+  "description": "My very first gear, developed along with the flywheel gear building tutorial.",
+  "version": "0.1.0",
+  "author": "Flywheel User",
+  "maintainer": "Flywheel <support@flywheel.io>",
+  "cite": "",
+  "license": "Apache-2.0",
+  "url": "http://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FEAT",
+  "source": "https://github.com/flywheel-apps/fsl-feat",
+  "environment": {
+    "FLYWHEEL": "/flywheel/v0"
+  },
+  "custom": {
+    "gear-builder": {
+      "category": "analysis",
+      "image": "alpine:latest"
+    },
+    "flywheel": {
+      "suite": "Flywheel Training Gears"
+    }
+  },
+  "inputs": {
+    "message_file": {
+      "description": "the custom message we'll print after our Hello statements",
+      "base": "file",
+      "type": {
+        "enum": [
+          "text"
+        ]
+      }
+    }
+  },
+  "config": {
+    "my_name": {
+      "description": "Your name, for the program to say 'hello' to",
+      "type": "string"
+    },
+    "num_rep": {
+    "description": "The number of times to say 'hello'",
+      "default": 1,
+      "minimum": 0,
+      "maximum": 10,
+      "type": "integer"
+    }
+  },
+  "command": "./run"
+}

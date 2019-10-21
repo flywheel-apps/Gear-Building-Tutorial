@@ -1,0 +1,58 @@
+#!/bin/bash
+# The Shebang tell the computer what to call the file with when it runs.
+# For more info:https://bash.cyberciti.biz/guide/Shebang
+
+
+###########################################
+# Environment Variables.
+
+FLYWHEEL_BASE=/flywheel/v0
+MANIFEST=$FLYWHEEL_BASE/manifest.json
+CONFIG_FILE=$FLYWHEEL_BASE/config.json
+
+##########################################
+# Parse function.
+
+function parse_config {
+
+# Usage: <VAL>="$(parse_config '<KEY>')"
+# Parses the value found in the config.json file of <KEY> to variable <VAL>
+# This code first looks for the value in the config.json file.
+# If not found there, it looks for a default value in the manifest.json file
+
+CONFIG_FILE=$FLYWHEEL_BASE/config.json
+MANIFEST_FILE=$FLYWHEEL_BASE/manifest.json
+
+if [[ -f $CONFIG_FILE ]]; then
+ echo "$(cat $CONFIG_FILE | jq -r '.config.'$1)"
+ else
+ CONFIG_FILE=$MANIFEST_FILE
+ echo "$(cat $MANIFEST_FILE | jq -r '.config.'$1'.default')"
+ fi
+}
+
+
+##########################################
+# Extract values with parse function.
+
+my_name="$(parse_config 'my_name')".   # The name we're saying hello to
+num_rep="$(parse_config 'num_rep')".   # The number of times we're going to say hello
+custom_message="$(parse_config 'custom_message')".  # The text file containing a custom message to print
+
+
+##########################################
+# The actual commands we want to run.
+
+echo $num_rep
+while [ $num_rep -gt 0 ]    # if num_rep is greater than 0, do this loop:
+do
+echo "Hello, ${my_name}!"   # print "Hello Name!" every loop
+num_rep=$(( $num_rep - 1 )) # Subtract one from num_rep
+done
+
+echo ""
+echo "Custom Message:"
+echo ""
+cat $message_file
+echo ""
+
