@@ -1,2 +1,3 @@
 FROM alpine:latest
-ENTRYPOINT ["./run"]
+
+ENTRYPOINT ["python run.py"]
