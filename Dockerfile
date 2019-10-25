@@ -1,6 +1,5 @@
 FROM alpine:latest
-RUN apk add --no-cache bash \
-    --update \
+RUN apk add --update \
     python \
     py-pip \
   && pip install flywheel-sdk \
