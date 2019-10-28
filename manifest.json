@@ -8,15 +8,15 @@
   "maintainer": "Flywheel <support@flywheel.io>",
   "cite": "",
   "license": "Apache-2.0",
-  "url": "http://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FEAT",
-  "source": "https://github.com/flywheel-apps/fsl-feat",
+  "url": "",
+  "source": "",
   "environment": {
     "FLYWHEEL": "/flywheel/v0"
   },
   "custom": {
     "gear-builder": {
       "category": "analysis",
-      "image": "homer/alpine-python:v1.0.0"
+      "image": ""
     },
     "flywheel": {
       "suite": "Flywheel Training Gears"
