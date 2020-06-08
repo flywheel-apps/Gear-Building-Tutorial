@@ -1,8 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # The Shebang tell the computer what to call the file with when it runs.
 # For more info:https://bash.cyberciti.biz/guide/Shebang
 
 import flywheel
+import os
 
 context = flywheel.GearContext()  # Get the gear context
 config = context.config           # from the gear context, get the config settings
@@ -22,7 +23,9 @@ while (num_rep > 0):                      # While the num_rep variable is greate
 # Now read the custom message:
 message_file = open(message_file,'r')   # Open the file with the intent to read
 print('\n')                               # Print a blank line to separate the message from the "hello's"
-print(message_file.read())                # Read and print the file
-
+print(message_file.read())
+# Read and print the file
+os.system("echo 'echo $MYENV'")
+os.system('echo $MYENV')
 
 

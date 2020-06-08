@@ -3,28 +3,26 @@
   "name": "hello-world",
   "label": "Hello World: My First Gear",
   "description": "My very first gear, developed along with the flywheel gear building tutorial.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Flywheel User",
   "maintainer": "Flywheel <support@flywheel.io>",
   "cite": "",
   "license": "Apache-2.0",
   "url": "",
   "source": "",
-
   "environment": {
-    "FLYWHEEL": "/flywheel/v0"
+    "FLYWHEEL": "/flywheel/v0",
+    "MYENV": "my test environmet"
   },
-
   "custom": {
     "gear-builder": {
       "category": "analysis",
-      "image": ""
+      "image": "dbp2123/test1"
     },
     "flywheel": {
       "suite": "Flywheel Training Gears"
     }
   },
-
   "inputs": {
     "message_file": {
       "description": "the custom message we'll print after our Hello statements",
@@ -36,7 +34,6 @@
       }
     }
   },
-
   "config": {
     "my_name": {
       "description": "Your name, for the program to say 'hello' to",
@@ -50,6 +47,8 @@
       "type": "integer"
     }
   },
-
-  "command": "python run.py"
+  "command": "python run.py",
+  "environment": {
+    "MY_ENV": "my test value"
+  }
 }
