@@ -12,12 +12,12 @@
   "source": "",
   "environment": {
     "FLYWHEEL": "/flywheel/v0",
-    "MYENV": "my test environmet"
+    "MYENV": "my test environment"
   },
   "custom": {
     "gear-builder": {
       "category": "analysis",
-      "image": "dbp2123/test1"
+      "image": "homer/alpine-python:0.1.0"
     },
     "flywheel": {
       "suite": "Flywheel Training Gears"
@@ -32,7 +32,7 @@
           "text"
         ]
       }
-    }
+    }s
   },
   "config": {
     "my_name": {
@@ -47,7 +47,7 @@
       "type": "integer"
     }
   },
-  "command": "python run.py",
+  "command": "python3 run.py",
   "environment": {
     "MY_ENV": "my test value"
   }
